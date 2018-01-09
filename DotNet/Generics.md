@@ -36,10 +36,16 @@ In .NET the generics is supported from virtual machine layer not just in compila
 - *Covariant subtyping on type constructor* - Eiffels
 - *Full template like support* - C++
 
+### Final Implementation Summary
+1. Just in time.
+2. Sharing code and representation.
+3. Avoid boxing and unboxing.
+4. Efficient run-time support.
+
 ### C# Generics and Polymorphism
 Examples and use cases of parametric polymorphism in C# generics.
 
-#### 1. Using Parameterized types.
+#### 1. Using Parameterized types
 **Object based stack**
 ```csharp
 // Definition
