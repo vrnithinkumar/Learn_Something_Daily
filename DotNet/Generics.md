@@ -86,9 +86,70 @@ s.push("string");
 ```
 > In object based approach, we have to cast explicitly as well as it use boxing and unboxing everywhere.
 
+#### 2. Exact Runtime types
+As CLR supporting run-time type checks, checked coercions and reflections we have to store the exact run-time type associated with objects.
+In C# Generics it enforces us to use exact types in way exact same type parmeter.
+```csharp
+object obj = new Stack<int>();
+Stack<int> s2 = (Statck<int>)obj;          // It succeeds since exact type parameter.
+Stack<string> s3 = (Statck<string>) obj;   // It is not supported and thows exception.   
+```
+
+#### 3. Polymorphic methods
+Methods which can take both normal parameter as well as type parameter. 
+eg: Array.Slice<T>() and Array.Reverse<T>() are the static polymorphic methods in Array class.
+
+#### 4. Definition of parmeterized types
+- Class 
+
+```csharp
+class Stack<T>
+{
+  void push(T value);
+  T pop();
+}
+```
+
+- Interface
+
+```csharp
+interface ISet<T>
+{
+    bool Contains(T t);
+    void Add(T t);
+    void Remove(T t);
+}
+```
+
+- Struct
+
+```csharp
+struct Pair<T, U>
+{
+    public T fst;
+    public U snd;
+
+    public Pair(T t, U u)
+    {
+        fst = t;
+        snd = u;
+    }
+}
+```
+
+- Delegates
+```csharp
+public delegate void Del<T>(T item); 
+public static void Notify(int i) { }  
+Del<int> m1 = new Del<int>(Notify);
+```
+
+### IL Support for Generics
+
+
 ### Interesting Questions
-1. Should we  able to convert a List<string> to a List<object>?
-In type-theory terminology, we describe this behavior by saying that C# array types are “covariant” and generic types are “invariant”.  
+1. Should we  able to convert a `List<string>` to a `List<object>` similar to `Array<string>` casting to `Array<object>`?
+    In type-theory terminology, we describe this behavior by saying that C# array types are “covariant” and generic types are “invariant”.  
 
 ### Terms
 - **Parameterized types** : A type which accepts other types as the parameter.
