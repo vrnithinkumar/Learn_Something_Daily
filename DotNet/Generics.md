@@ -84,7 +84,12 @@ int value = s.pop();
 string val = s.pop();
 s.push("string");
 ```
-> Object based approach has we have to cast explicitly as well as it use boxing and unboxing everywhere.
+> In object based approach, we have to cast explicitly as well as it use boxing and unboxing everywhere.
+
+### Interesting Questions
+1. Should we  able to convert a List<string> to a List<object>?
+In type-theory terminology, we describe this behavior by saying that C# array types are “covariant” and generic types are “invariant”.  
+
 ### Terms
 - **Parameterized types** : A type which accepts other types as the parameter.
 - **Polymorphic methods** : Methods which can accept the types as well as values and act based on that.
