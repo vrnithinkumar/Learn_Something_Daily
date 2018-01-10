@@ -145,7 +145,18 @@ Del<int> m1 = new Del<int>(Notify);
 ```
 
 ### IL Support for Generics
+<Insert pic of comparison>
+Main changes to the IL are
+a. Adding new type to the IL type system.
 
+
+b. Polymorphic form of declarations.
+
+c. Polymorphism in instructions.
+- `ldarg, ldfld, newarr` are already supporting generics.
+- Type parmeter is referenced by the number. eg : `Stack<!0>`.
+- `box` and `unbox.val` to support <T> to convert from and to Object.
+- 
 
 ### Interesting Questions
 1. Should we  able to convert a `List<string>` to a `List<object>` similar to `Array<string>` casting to `Array<object>`?
