@@ -46,3 +46,6 @@ eg : `ldarg.0` will load 0-th argument to the stack.
 |    4    |
 |   ...   |
 
+## Reference 
+1. [ldloc.0 after stloc.0 ](https://stackoverflow.com/questions/44733675/why-there-is-a-ldloc-0-just-after-stloc-0-in-il-code)
+
