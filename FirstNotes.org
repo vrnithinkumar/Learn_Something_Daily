@@ -1,0 +1,9 @@
+* First place to note down.
+** Scott Hansel minutes
+   - Functional is different paradigm 
+   - Easy to find bugs. Like types and pattern matching is very helpful.
+   - F# can be used in any platform with .NET core and mono.
+   - F# was already built around open source.
+   - Easy to use with existing open source technologies like kubernet or
+     cassandra.
+   - 
